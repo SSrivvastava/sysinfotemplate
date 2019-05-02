@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<h1>{{ ansible_facts.user_id }}</h1>
+<table style="widtd:100%">
+<tr>
+<th> Type of information </th> <th> Value </th>
+</tr>
+<tr>
+<td> OS Family : </td> <td> {{ ansible_facts.os_family }} </td>
+</tr>
+<tr>
+<td> IP Address : </td> <td> {{ ansible_facts.default_ipv4.address }} </td>
+</tr>
+<tr>
+<td> Total Memory : </td> <td> {{ ansible_facts.memory_mb.real.total }} </td>
+</tr>
+<tr>
+<td> Free Memory : </td> <td> {{ ansible_facts.memory_mb.real.free }} </td>
+</tr>
+<tr>
+<td> Used Memory : </td> <td> {{ ansible_facts.memory_mb.real.used }} </td>
+</tr>
+<tr>
+<td> System Architecture : </td> <td> {{ansible_facts.userspace_architecture}} </td>
+</tr>
+<tr>
+<td> Disk Size : </td> <td> {{ansible_facts.devices.sda.size}} </td>
+</tr>
+</table>
+</body>
+</html>
