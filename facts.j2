@@ -26,7 +26,7 @@ tr:nth-child(even) {
 <th> Type of information </th> <th> Value </th>
 </tr>
 <tr>
-<td> OS Family : </td> <td> {{ ansible_facts.os_family }} </td>
+<td> OS Family : </td> <td> {{ ansible_facts.distribution }} </td>
 </tr>
 <tr>
 <td> IP Address : </td> <td> {{ ansible_facts.default_ipv4.address }} </td>
